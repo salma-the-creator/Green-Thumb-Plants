@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: {},  // { [plantId]: { id, name, price, thumbnail, quantity } }
+  items: {}, 
   totalQuantity: 0,
 };
 
@@ -12,7 +12,7 @@ const cartSlice = createSlice({
     addToCart(state, action) {
       const plant = action.payload;
       if (state.items[plant.id]) {
-        // Already in cart - do nothing (button disables in UI)
+      
         return;
       }
       state.items[plant.id] = { ...plant, quantity: 1 };
@@ -48,3 +48,4 @@ const cartSlice = createSlice({
 
 export const { addToCart, increaseQuantity, decreaseQuantity, deleteItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
+
