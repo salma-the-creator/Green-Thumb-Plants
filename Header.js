@@ -12,7 +12,7 @@ export default function Header() {
         <Link to="/cart">Cart</Link>
       </nav>
       <div>
-        🛒 <span>{totalQuantity}</span>
+         <span>{totalQuantity}</span>
       </div>
     </header>
   );
